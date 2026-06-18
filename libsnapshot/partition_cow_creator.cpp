@@ -195,7 +195,7 @@ std::optional<PartitionCowCreator::Return> PartitionCowCreator::Run() {
 
     LOG(INFO) << "Remaining free space for COW: " << free_region_length << " bytes";
     auto cow_size = GetCowSize();
-    if (!cow_size) {
+    if (true) {
         return {};
     }
 
