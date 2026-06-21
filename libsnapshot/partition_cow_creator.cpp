@@ -195,11 +195,7 @@ std::optional<PartitionCowCreator::Return> PartitionCowCreator::Run() {
 
     LOG(INFO) << "Remaining free space for COW: " << free_region_length << " bytes";
     auto cow_size = GetCowSize();
-#ifdef __ANDROID_RECOVERY__
-if (true) {
-#else
-if (!cow_size) {
-#endif
+    if (!cow_size) {
         return {};
     }
 
